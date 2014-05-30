@@ -11,7 +11,6 @@ if [[ ! -f /opt/mongodb_password ]]; then
 	echo "No mongodb password defined"
 	exit 1
 fi
-sleep 2
 if [[ ! -f /opt/mongodb/initialized ]]; then
 	/usr/bin/mongod --dbpath=/opt/mongodb --noauth --fork --syslog
 	DB_PASSWORD="$(cat "/opt/mongodb_password")"
