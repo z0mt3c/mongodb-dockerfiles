@@ -14,3 +14,5 @@ RUN LC_ALL=C DEBIAN_FRONTEND=noninteractive \
 
 ADD	. /usr/bin
 RUN	chmod +x /usr/bin/start_mongodb.sh
+
+EXPOSE 27017
