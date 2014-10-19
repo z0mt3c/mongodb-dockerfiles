@@ -1,4 +1,4 @@
-FROM		ubuntu:quantal
+FROM		ubuntu:12.04
 MAINTAINER	ayufan "ayufan@ayufan.eu"
 
 RUN LC_ALL=C DEBIAN_FRONTEND=noninteractive \
