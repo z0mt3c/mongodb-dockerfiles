@@ -23,6 +23,6 @@ fi
 
 # always update permissions in case of user-id being switched
 chown -R mongodb:mongodb /opt/mongodb
-chmod -755 /opt/mongodb
+chmod 755 /opt/mongodb
 
 exec /usr/bin/mongod --dbpath=/opt/mongodb --auth
