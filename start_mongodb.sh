@@ -18,9 +18,11 @@ db.addUser({user: "admin", pwd:"${DB_PASSWORD}", roles:["clusterAdmin", "userAdm
 EOF
     kill $(pidof mongod)
     sleep 8s
-    chown -R mongodb:mongodb /opt/mongodb
-    chmod -R 755 /opt/mongodb
     touch /opt/mongodb/initialized
 fi
+
+# always update permissions in case of user-id being switched
+chown -R mongodb:mongodb /opt/mongodb
+chmod -755 /opt/mongodb
 
 exec /usr/bin/mongod --dbpath=/opt/mongodb --auth
