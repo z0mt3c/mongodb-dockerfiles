@@ -8,7 +8,7 @@ if [[ ! -f /opt/mongodb_password ]]; then
 fi
 if [[ ! -f /opt/mongodb/initialized ]]; then
     mkdir -p /opt/mongodb
-    /usr/bin/mongod --bind_ip=127.0.0.1 --dbpath=/opt/mongodb --noauth --fork --syslog
+    /usr/bin/mongod --bind_ip=127.0.0.1 --dbpath=/opt/mongodb --noauth --fork --syslog --nojournal --noprealloc --smallfiles
     DB_PASSWORD="$(cat "/opt/mongodb_password")"
     sleep 2s
     echo "Creating admin user..."
