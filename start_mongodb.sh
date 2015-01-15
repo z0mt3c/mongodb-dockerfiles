@@ -25,4 +25,4 @@ fi
 chown -R mongodb:mongodb /opt/mongodb
 chmod 755 /opt/mongodb
 
-exec /usr/bin/mongod --dbpath=/opt/mongodb --auth
+exec /usr/bin/mongod --dbpath=/opt/mongodb --auth --smallfiles
