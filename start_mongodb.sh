@@ -14,7 +14,7 @@ if [[ ! -f /opt/mongodb/initialized ]]; then
     echo "Creating admin user..."
     mongo <<EOF
 use admin
-db.addUser({user: "admin", pwd:"${DB_PASSWORD}", roles:["clusterAdmin", "userAdminAnyDatabase"]})
+db.createUser({user: "admin", pwd:"${DB_PASSWORD}", roles:["clusterAdmin", "userAdminAnyDatabase"]})
 EOF
     kill $(pidof mongod)
     sleep 8s
