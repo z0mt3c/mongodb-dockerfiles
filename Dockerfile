@@ -10,7 +10,7 @@ RUN LC_ALL=C DEBIAN_FRONTEND=noninteractive \
 	apt-get install -yqq --no-install-recommends mongodb-org && \
 	apt-get autoremove -yqq --purge && \
 	apt-get clean && \
-	rm -rf /tmp/* /var/tmp/* /var/lib/apt/lists/*
+	rm -rf /tmp/* /var/tmp/* /var/lib/apt/lists/* && \
 	rm /usr/sbin/policy-rc.d
 
 ADD	. /usr/bin
