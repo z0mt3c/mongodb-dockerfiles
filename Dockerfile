@@ -1,7 +1,7 @@
 FROM		ubuntu:14.04
 MAINTAINER	ayufan "ayufan@ayufan.eu"
 
-RUN LC_ALL=C DEBIAN_FRONTEND=noninteractive \
+RUN DEBIAN_FRONTEND=noninteractive LC_ALL=C && \
 	echo "#!/bin/sh\nexit 101" > /usr/sbin/policy-rc.d && \
 	chmod +x /usr/sbin/policy-rc.d && \
 	apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10 && \
